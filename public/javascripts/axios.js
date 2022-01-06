@@ -96,9 +96,19 @@ window.addEventListener('load', async () => {
   console.log("🚀 ~ file: axios.js ~ line 23 ~ window.addEventListener ~ streamers", channels);
 
   const streamers = document.querySelector('#streamers');
+  const onlineBtn = document.querySelector('#onlineBtn');
 
   renderOnlineChannels(streamers, onlineChannels);
   renderOfflineChannels(streamers, offlineChannels);
+
+  onlineBtn.addEventListener('click', () => {
+    while (streamers.firstChild) {
+      streamers.removeChild(streamers.lastChild);
+    }
+    renderOnlineChannels(streamers, onlineChannels)
+  })
+
+  
 
 })
 

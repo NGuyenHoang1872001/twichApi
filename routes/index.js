@@ -8,7 +8,7 @@ router.get('/', async function(req, res, next) {
 });
 
 router.get('/testapi', (req, res) => {
- res.render('index', {title: 'Hello mn'});
+ res.render('index');
 })
 
 module.exports = router;
